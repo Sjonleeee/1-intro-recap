@@ -27,8 +27,6 @@
   const init = async () => {
     // read the JSON file
     const products = await getProducts();
-    console.log(products);
-
     // parse the data into HTML elements
     showProducts(products);
   };
