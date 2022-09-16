@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;800&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+:root {
+    --s_2: .2rem;
+    --s_1: .5rem;
+    --s1: 1rem;
+    --s2: 1.2rem;
+    --s3: 1.5rem;
+    --s4: 2rem;
+
+    --fs-s: .8rem;
+    --fs-m: 1rem;
+    --fs-l: 1.5rem;
+    --fs-xl: 2rem;
+    --fs-xxl: 8rem;
+
+    --c-bg1: #8EC5FC;
+    --c-bg2: #E0C3FC;
+    --c-dark: #4c4c4c;
+    --c-mid: #757575;
+    --c-primary: #ff3f40;
+}
+
+body {
+    color: var(--c-dark);
+    padding: var(--s1);
+    line-height: 1.5;
+
+    font-family: 'Roboto Slab', serif;
+
+    background-image: linear-gradient(80deg, var(--c-bg1), var(--c-bg2));
+}
+
+h1 {
+    font-weight: 800;
+    font-size: var(--fs-xxl);
+    text-align: center;
+    line-height: 1;
+
+    color: var(--c-primary);
+    background-color: white;
+
+    margin: var(--s4) 5rem;
+    padding: var(--s1) var(--s4);
+
+    border-radius: 6rem;
+}
+
+.products {
+    margin: 0 auto;
+    padding: 0 5rem;
+}
+
+.products__list {
+    display: grid;
+    gap: var(--s2);
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+.product {
+    background-color: white;
+    border-radius: .25rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s1);
+    height: 100%;
+
+    padding: var(--s2);
+}
+
+.product>* {
+    grid-column: 1/ -1
+}
+
+.product__title {
+    font-size: var(--fs-l);
+    font-weight: 800;
+}
+
+.product__image {
+    aspect-ratio: 4/3;
+    object-fit: contain;
+}
+
+.product__price {
+    grid-column: 1;
+    align-self: flex-end;
+    color: var(--c-primary);
+    line-height: 1;
+}
+
+.product__price span {
+    font-size: var(--fs-l);
+}
+
+.product__btn {
+    grid-column: 2;
+    align-self: flex-end;
+
+    background-color: var(--c-primary);
+    color: white;
+    border: none;
+    padding: var(--s_2) var(--s_1);
+    font: inherit;
+    outline-color: var(--c-primary);
+    outline-offset: var(--s_2);
+}
