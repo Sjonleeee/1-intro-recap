@@ -5,11 +5,17 @@
     return data;
   };
 
+  // fetch is a promise that needs to be resolved
+  // then resolves the promise
+  // use a callback function where r is the result of the promise
+  // we need to convert this result to json
+  // we return the json object as return value for getProducsAlt
   const getProductsAlt = () =>
     fetch("https://fakestoreapi.com/products").then((r) => r.json());
 
   const showProducts = (products) => {
     products.forEach((product) => {
+      // the dollar sign is used to store DOM elements in variables
       const $card = document.querySelector(".products__item");
       const $newCard = $card.cloneNode(true);
 
@@ -18,6 +24,8 @@
       $newCard.querySelector(".product__price span").innerText = product.price;
       $newCard.querySelector(".product__description").innerText = product.description;
 
+      // take the parent HTML node, append means add as last item
+      // prepend = add as first item
       $card.parentNode.appendChild($newCard);
     });
 
@@ -30,7 +38,7 @@
     // parse the data into HTML elements
     showProducts(products);
   };
-
+  // 1. call the init function to start the application
   init();
 }
 
